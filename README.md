@@ -42,6 +42,7 @@ J’ai travaillé dans un environnement virtuel qui est un mécanisme qui permet
 
 Avant d'exécuter l'application, vous devez configurer les variables d'environnement dans le fichier `.env`. Voici les variables à configurer :
 
+### Fichier .env
       RABBIT_USER=Brahim
       RABBIT_PASSWORD=Badr064
       user=root
@@ -50,23 +51,11 @@ Avant d'exécuter l'application, vous devez configurer les variables d'environne
       port=3308
       database=DataStream
 
+Ces valeurs seront utilisées pour se connecter au serveur RabbitMQ et à la base de données MySQL dans le projet.
 
 ### Dossier assets : 
-Ce dossier contient le fichier web-server-nginx.log qui sera utilisé comme source de logs pour le projet.
+Ce dossier contient le fichier web-server-nginx.log qui sera utilisé comme source de logs pour le projet.'
 
-### Fichier .env
-
-Ce fichier contient les informations de configuration sous forme de variables d'environnement pour le projet. Les valeurs des variables sont les suivantes :
-
-              RABBIT_USER=Brahim
-              RABBIT_PASSWORD=Badr064
-              user = 'root'
-              password = ''
-              host = 'localhost'
-              port = '3308'
-              database = 'DataStream'
-
-Ces valeurs seront utilisées pour se connecter au serveur RabbitMQ et à la base de données MySQL dans le projet.
 
 ###  Fichier config.py
 
