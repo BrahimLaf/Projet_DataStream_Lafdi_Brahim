@@ -100,13 +100,13 @@ Ce fichier contient le code pour lire le fichier de logs web-server-nginx.log à
 
 ###  Fichier data-lake-consumer.py
 
-Ce fichier contient le code du consommateur data-lake-consumer, qui est responsable de consommer les logs à partir de la file d'attente 'queue-data-lake' et de les traiter en temps réel. Il utilise la bibliothèque pika pour se connecter au serveur RabbitMQ, créer une file d'attente, et consommer les messages de la file d'attente. Les logs sont ensuite traités selon les besoins du projet, par exemple, ils peuvent être stockés dans la base de données MySQL, ou analysés pour obtenir des statistiques ou des informations spécifiques.
+Ce fichier contient le code du consommateur data-lake-consumer, qui est responsable de consommer les logs à partir de la file d'attente 'queue-data-lake' et de les traiter en temps réel. Il utilise la bibliothèque pika pour se connecter au serveur RabbitMQ, créer une file d'attente, et consommer les messages de la file d'attente. Les logs sont ensuite traités et sont stockés dans la base de données MySQL.
 
 ![image](https://user-images.githubusercontent.com/115103788/231186711-3d614ead-d5f8-4413-ae87-a60384e086d9.png)
 
 ###  Fichier data-clean-consumer.py
 
-Ce fichier contient le code du consommateur data-clean-consumer, qui est responsable de consommer les logs à partir de la file d'attente 'queue-data-clean' et de les traiter en temps réel. Le traitement des logs dans ce consommateur peut inclure le nettoyage des données, l'extraction d'informations spécifiques, ou l'envoi des données à d'autres systèmes pour traitement ultérieur. Le consommateur utilise également la bibliothèque pika pour se connecter au serveur RabbitMQ et consommer les messages de la file d'attente.
+Ce fichier contient le code du consommateur data-clean-consumer, qui est responsable de consommer les logs à partir de la file d'attente 'queue-data-clean' et de les traiter en temps réel. Le traitement des logs dans ce consommateur  inclu le nettoyage des données, l'extraction d'informations spécifiques,  Le consommateur utilise également la bibliothèque pika pour se connecter au serveur RabbitMQ et consommer les messages de la file d'attente et sont stockés dans la base de données MySQL.
 
 ![image](https://user-images.githubusercontent.com/115103788/231186776-f0fab344-2c06-449e-b8f6-7fbba89b4438.png)
 
