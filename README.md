@@ -1,30 +1,40 @@
 # Projet d'analyse des logs en temps réel avec Python, RabbitMQ et MySQL
 
-Objectif
+
+<h2> Objectif : </h2>
 
 L'objectif de ce projet est de créer un système d'analyse des logs d'un serveur web en temps réel en utilisant Python, RabbitMQ et MySQL. Le système comprend un producteur (logs-producer) qui lit ligne par ligne un fichier de logs web-server-nginx.log, les publie dans un échange de type topic, et les envoie à deux files d'attente différentes : queue-data-lake et queue-data-clean. Le système comprend également deux consommateurs, data-lake-consumer et data-clean-consumer, qui traitent chaque file d'attente différemment en temps réel.
-Dossier assets
 
+<h2> Architechture : </h2>
+
+![image](https://user-images.githubusercontent.com/115103788/231180603-0db8c6c0-f124-4dae-98ee-7090916e9b6a.png)
+
+<h2>1.	Environnement virtuel</h2>
+
+J’ai travaillé dans un environnement virtuel qui est un mécanisme qui permet de séparer les dépendances requises par différents projets en créant des environnements virtuels qui sont isolés entre eux.</p>
+
+## Dossier assets : 
 Ce dossier contient le fichier web-server-nginx.log qui sera utilisé comme source de logs pour le projet.
-Fichier .env
+
+## Fichier .env
 
 Ce fichier contient les informations de configuration sous forme de variables d'environnement pour le projet. Les valeurs des variables sont les suivantes :
 
-makefile
-
-RABBIT_USER=Brahim
-RABBIT_PASSWORD=Badr064
-user = 'root'
-password = ''
-host = 'localhost'
-port = '3308'
-database = 'DataStream'
+              RABBIT_USER=Brahim
+              RABBIT_PASSWORD=Badr064
+              user = 'root'
+              password = ''
+              host = 'localhost'
+              port = '3308'
+              database = 'DataStream'
 
 Ces valeurs seront utilisées pour se connecter au serveur RabbitMQ et à la base de données MySQL dans le projet.
-Fichier config.py
+
+##Fichier config.py
 
 Ce fichier contient la configuration pour charger les variables d'environnement à partir du fichier .env. Il utilise la bibliothèque dotenv pour charger les variables d'environnement dans le projet. Les variables d'environnement sont stockées dans un dictionnaire nommé CONFIG qui peut être utilisé pour accéder aux valeurs de configuration dans d'autres parties du projet.
-Fichier server.py
+
+## Fichier server.py
 
 Ce fichier contient le code pour établir une connexion avec le serveur RabbitMQ en utilisant les informations de configuration du fichier .env. Il utilise la bibliothèque pika pour interagir avec RabbitMQ. Une fois la connexion établie, un objet de canal est créé pour envoyer et recevoir des messages à partir du serveur RabbitMQ.
 Fichier docker-compose.yml
